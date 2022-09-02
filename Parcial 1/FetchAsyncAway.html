@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <head>
+        <meta chartset="UTF-8">
+        <title></title>
+    </head>
+    <style>        
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-size: cover;
+            height: 100vh;
+        }
+        .left,.right{ 
+            display: flex;
+            place-items: center;
+            justify-content: center;
+            text-align:justify;
+        }
+    </style>   
+
+    <body>
+        <div class="container">
+            <div class="left">
+                <button id="boton">Hacer Fetch</button>
+                <img id="imagen" width="400" height="300">
+            </div>
+    
+            <div class="right">
+               
+                    <label for="nombre">Texto devuelto:</label><br>
+                    <textarea id="devuelto" name="devuelto" cols="30" rows="10"></textarea>
+                    <button id="boton2">Hacer un fetch</button>
+                   
+            </div>
+        </div>
+    
+    <script>
+        document.getElementById('boton').addEventListener('click',async function() {
+                let dato = await hacerPeticion();
+                console.log(dato);
+                document.getElementById('imagen').src=dato.url;
+             });
+
+            async function hacerPeticion() {
+                let respuesta =  await fetch('https://api.waifu.pics/sfw/waifu');
+                        let datojson = await respuesta.json();
+                            return datojson
+            }
+
+        document.getElementById('boton2').addEventListener('click',async function(){
+            let dato=await peticion();
+            console.log(dato);
+            document.getElementById('devuelto').value=dato.data;
+        })
+
+        async function peticion(){
+            let respuesta = await fetch('https://meowfacts.herokuapp.com/');
+            let datojson = await respuesta.json();
+            return datojson
+        }
+
+    </script>
+    </body>
+</html>
+
