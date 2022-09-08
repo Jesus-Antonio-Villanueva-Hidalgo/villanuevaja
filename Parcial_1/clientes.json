@@ -1,0 +1,9 @@
+{
+    "clientes":{
+        "100":{"Nombre":"Jesus","Apellido_Paterno":"Villanueva"},
+        "200":{"Nombre":"Fernando","Apellido_Paterno":"Soto"},
+        "300":{"Nombre":"Yessica","Apellido_Paterno":"Gutierrez"},
+        "400":{"Nombre":"Lucy","Apellido_Paterno":"Escobar"},
+        "500":{"Nombre":"Maria","Apellido_Paterno":"Perez"}
+    }
+}
