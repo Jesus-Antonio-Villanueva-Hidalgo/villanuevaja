@@ -15,13 +15,13 @@ app.use(express.json())
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 app.use(morgan('combined', { stream: accessLogStream }))
 
-/*app.use((req,res,next)=>{
+app.use((req,res,next)=>{
     console.log('esta es una funcion middleware')
     next()
 },(resq,res,next)=>{
     console.log('esta es una segunda funcion middleware')
     next()
-});*/
+});
 
 app.post('/',(req,res)=>{
     //res.send('Respondiendo a una peticion POST')
