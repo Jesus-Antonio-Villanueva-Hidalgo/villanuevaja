@@ -5,3 +5,4 @@
 ::ffff:127.0.0.1 - - [25/Sep/2022:02:05:17 +0000] "GET /mayusculas/Hola HTTP/1.1" 200 - "-" "Thunder Client (https://www.thunderclient.com)"
 ::ffff:127.0.0.1 - - [25/Sep/2022:02:05:37 +0000] "GET /suma?x=9&y=3 HTTP/1.1" 200 14 "-" "Thunder Client (https://www.thunderclient.com)"
 ::ffff:127.0.0.1 - - [25/Sep/2022:02:05:50 +0000] "GET / HTTP/1.1" 200 137 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [26/Sep/2022:02:58:52 +0000] "GET /mayusculas/Hola HTTP/1.1" 200 - "-" "Thunder Client (https://www.thunderclient.com)"
