@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 var morgan = require('morgan')
+const cadenas = require('./ModuloCadena')
+//const {pasarMayusculas,quitarEspacios} = require('./ModuloCadena')
 
 var fs = require('fs')
 var path = require('path')
@@ -14,6 +16,24 @@ app.use(express.json())
 
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 app.use(morgan('combined', { stream: accessLogStream }))
+
+app.post('/texto', (req,res) => {
+    console.log(req.body)
+    //let may = req.body.toUpperCase()
+    //let sinesp = req.body.trim()
+   // let longi = req.body.length
+    let may = cadenas.pasarMayusculas(req.body);
+    let sinesp = cadenas.quitarEspacios(req.body);
+    let longi = cadenas.obtenerLongitud(req.body);
+    //let may = pasarMayusculas(req,body);
+    //let sinesp = quitarEspacios(req,body);
+    
+    res.json(
+        {mayusculas: may,
+            sinespacios: sinesp,
+            longitud: longi}
+    )
+});
 
 app.use((req,res,next)=>{
     console.log('esta es una funcion middleware')
@@ -33,17 +53,7 @@ app.get('/',(req,res)=>{
     res.sendFile('./static/index.html',{root:__dirname},(err)=>(console.log('Archivo enviado')))
 });
 
-app.post('/texto', (req,res) => {
-    console.log(req.body)
-    let may = req.body.toUpperCase()
-    let sinesp = req.body.trim()
-    let longi = req.body.length
-    res.json(
-        {mayusculas: may,
-            sinespacios: sinesp,
-            longitud: longi}
-    )
-});
+
 
 app.post('/json',(req,res)=>{
     console.log(req.body.nombre)
