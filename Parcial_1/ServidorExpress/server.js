@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 var morgan = require('morgan')
-const cadenas = require('./ModuloCadena')
+const cadenas = require('./Modulo_Javascript/ModuloCadena')
 //const {pasarMayusculas,quitarEspacios} = require('./ModuloCadena')
 
 var fs = require('fs')
