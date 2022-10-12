@@ -22,3 +22,6 @@
 ::ffff:127.0.0.1 - - [26/Sep/2022:13:37:42 +0000] "POST /texto HTTP/1.1" 200 76 "-" "Thunder Client (https://www.thunderclient.com)"
 ::ffff:127.0.0.1 - - [26/Sep/2022:13:39:01 +0000] "POST /texto HTTP/1.1" 200 76 "-" "Thunder Client (https://www.thunderclient.com)"
 ::ffff:127.0.0.1 - - [27/Sep/2022:13:04:06 +0000] "POST /texto HTTP/1.1" 200 76 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [27/Sep/2022:13:16:30 +0000] "GET / HTTP/1.1" 200 137 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [27/Sep/2022:13:18:21 +0000] "GET / HTTP/1.1" 200 137 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [27/Sep/2022:13:20:19 +0000] "GET / HTTP/1.1" 200 137 "-" "Thunder Client (https://www.thunderclient.com)"

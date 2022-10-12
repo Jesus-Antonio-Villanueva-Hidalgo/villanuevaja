@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta chartset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <label for = "cadena">Cadenas:</label>
+        <input id="cadena" type="text">
+        <button id="btn">Mayusculas</button>
+        <br>
+        <br>
+        <label for = "ResultadoM">Resultado Mayusculas:</label>
+        <input id="ResultadoMay" type="text">
+        <br>
+        <br>
+        <label for = "ResultadoS">Resultado Sin espacios:</label>
+        <input id="ResultadoSin" type="text">
+
+        <script type="module">
+            //import {pasarMayuscula,quitarEspacios } from "./ModuloJS.js"
+            import * as funciones from "./ModuloJS.js"
+            document.getElementById("btn").addEventListener("click",function(){
+                
+                let cad=document.getElementById("cadena").value;
+                let cadmay = funciones.pasarMayuscula(cad);
+                console.log(cadmay)
+                document.getElementById("ResultadoMay").value = cadmay;
+            });
+            document.getElementById("btn").addEventListener("click",function(){
+                let cad=document.getElementById("cadena").value;
+                let cadsin = funciones.quitarEspacios(cad);
+                console.log(cadsin)
+                document.getElementById("ResultadoSin").value = cadsin;
+            });
+        </script>
+    </body>
+</html>
