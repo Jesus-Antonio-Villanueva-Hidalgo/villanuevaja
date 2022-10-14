@@ -11,10 +11,16 @@ var connection = mysql.createConnection({
    
   connection.connect();
    
-  connection.query('SELECT * FROM city', function (error, results, fields) {
+  // connection.query('SELECT * FROM city', function (error, results, fields) {
+  //   if (error) throw error;
+  //   console.log(results);
+
+    //var xls = j2xls(results);
+    //fs.writeFileSync(`${__dirname}/Excel/data.xlsx`,xls,'binary')
+  //});
+  connection.query('SELECT * FROM `city` WHERE `Countrycode` = ?','MEX',function(error,results,fields){
     if (error) throw error;
     console.log(results);
-
     var xls = j2xls(results);
     fs.writeFileSync(`${__dirname}/Excel/data.xlsx`,xls,'binary')
   });
