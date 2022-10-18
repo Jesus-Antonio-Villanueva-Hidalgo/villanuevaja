@@ -1,11 +1,15 @@
 let mysql = require('mysql')
 
-var connection = mysql.createConnection({
+export function pool(){
+  var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : '',
     database : 'world'
   });
+  return connection
+}
+
 
 connection.connect((error)=>{
   if(error){
@@ -14,5 +18,3 @@ connection.connect((error)=>{
   }
   console.log("CONEXION EXITOSA")
 });
-
-module.exports = connection;
