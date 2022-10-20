@@ -30,6 +30,15 @@ app.post('/city',(req,res)=>{
   })
 });
 
+app.put('/city',(req,res)=>{
+  const {Name,CountryCode,District,Population} = req.body;
+  con.query(`UPDATE city SET Name='${Name}',CountryCode='${CountryCode}',District='${District}',Population=${Population})`,function(error,results,fields){
+    res.json('Actualizado correctamente')
+    res.status(results)
+    if(error) throw error
+  })
+});
+
 app.delete('/city/:id',(req,res)=>{
   const id = req.params.id;
   con.query(`DELETE FROM city WHERE ID =${id}`,function(error,results,fields){
