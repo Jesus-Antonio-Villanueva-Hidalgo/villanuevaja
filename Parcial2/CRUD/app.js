@@ -13,6 +13,14 @@ let con = mysql.createConnection({
   database : 'world'
 })
 
+app.get('/city',(req,res)=>{
+  const id = req.params.id;
+  con.query(`SELECT * FROM city`,function(error,results,fields){
+    res.send(results)
+    if(error) throw error
+  })
+});
+
 app.get('/city/:id',(req,res)=>{
   const id = req.params.id;
   con.query(`SELECT * FROM city WHERE ID =${id}`,function(error,results,fields){
@@ -32,7 +40,7 @@ app.post('/city',(req,res)=>{
 
 app.put('/city',(req,res)=>{
   const {Name,CountryCode,District,Population} = req.body;
-  con.query(`UPDATE city SET Name='${Name}',CountryCode='${CountryCode}',District='${District}',Population=${Population})`,function(error,results,fields){
+  con.query(`UPDATE city SET Name='${Name}',CountryCode='${CountryCode}',District='${District}',Population=${Population}`,function(error,results,fields){
     res.json('Actualizado correctamente')
     res.status(results)
     if(error) throw error
