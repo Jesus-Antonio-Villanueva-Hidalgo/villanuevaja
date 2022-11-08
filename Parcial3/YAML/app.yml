@@ -1,0 +1,10 @@
+# YAML heart JSON
+persona:
+  Nombre: Jesus
+  Apellido: Villanueva
+  Edad: 22
+
+paises:
+  - Mexico
+  - Colombia
+  - USA
