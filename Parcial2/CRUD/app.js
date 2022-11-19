@@ -1,10 +1,12 @@
 const express = require('express')
 let mysql = require('mysql2')
+const cors = require('cors')
 const app = express()
 const port = 3002
 
 app.use(express.text())
 app.use(express.json())
+app.use(cors())
 
 let con = mysql.createConnection({
   host     : 'localhost',
@@ -39,8 +41,8 @@ app.post('/city',(req,res)=>{
 });
 
 app.put('/city',(req,res)=>{
-  const {Name,CountryCode,District,Population} = req.body;
-  con.query(`UPDATE city SET Name='${Name}',CountryCode='${CountryCode}',District='${District}',Population=${Population}`,function(error,results,fields){
+  const {id,Name,CountryCode,District,Population} = req.body;
+  con.query(`UPDATE city SET Name='${Name}',CountryCode='${CountryCode}',District='${District}',Population=${Population} WHERE ID=${id}`,function(error,results,fields){
     res.json('Actualizado correctamente')
     res.status(results)
     if(error) throw error
