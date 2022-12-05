@@ -77,7 +77,7 @@ router.get('/',async(req,res)=>{
  *       - city
  *     responses:
  *       200:
- *         description: Inserta una ciudad con las columnas: Name, CountryCode, District y Population.
+ *         description: Inserta una ciudad con las columnas Name, CountryCode, District y Population.
  *         content:
  *           application/json:
  *             schema:

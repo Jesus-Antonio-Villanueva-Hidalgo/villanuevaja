@@ -5,7 +5,7 @@ const ruta_ciudad = require('./rutas/router')
 const app = express()
 const port = 3002
 
-app.use(cors({origin:"http://localhost"}))
+app.use(cors({origin:'http://localhost'}))
 app.use(express.text())
 app.use(express.json())
 const path = require('path')
